@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
 test("login", async ({ page }) => {
-  await page.goto("");
-  expect(page.url()).toBe("");
+  await page.goto("https://playwright.dev/");
+  expect(page.url()).toBe("https://playwright.dev/");
 });
