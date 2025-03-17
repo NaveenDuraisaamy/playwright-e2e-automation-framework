@@ -1,3 +1,5 @@
+Run Command
+------
 npx playwright test tests/login.spec.js
 npx playwright test tests/locators.spec.js --project=chromium
 npx playwright test tests/locators.spec.js --project=chromium --headed
@@ -12,3 +14,13 @@ page.locator('').type('')
 
 page.fill('locator','value')
 page.type('locator','value')
+
+RecordPlayBack
+--------
+npx playwright codegen
+npx playwright codegen --help
+npx playwright codegen -o tests/sample.spec.js
+npx playwright codegen --target java
+npx playwright codegen --browser chromium
+npx playwright codegen --device "iphone 13"
+npx playwright codegen --viewport-size "1280,720"
