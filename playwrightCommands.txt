@@ -1,0 +1,14 @@
+npx playwright test tests/login.spec.js
+npx playwright test tests/locators.spec.js --project=chromium
+npx playwright test tests/locators.spec.js --project=chromium --headed
+npx playwright test tests/login.spec.js --project=chromium --headed --debug
+npx playwright show-report
+npx playwright show-report --port=9292
+
+input
+------
+page.locator('').fill('')
+page.locator('').type('')
+
+page.fill('locator','value')
+page.type('locator','value')
