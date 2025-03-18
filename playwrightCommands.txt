@@ -24,3 +24,8 @@ npx playwright codegen --target java
 npx playwright codegen --browser chromium
 npx playwright codegen --device "iphone 13"
 npx playwright codegen --viewport-size "1280,720"
+
+Radio Button
+---------
+await page.check("id");
+page.locator("id").check();
