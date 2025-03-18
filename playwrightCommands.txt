@@ -29,3 +29,11 @@ Radio Button
 ---------
 await page.check("id");
 page.locator("id").check();
+
+DropDown
+---------
+await page.locator("country").selectoption({label:'India'});  //label/visible text
+await page.locator("country").selectoption('India'); //text
+await page.locator("").selectoption({value:'uk'}); //value
+await page.locator("").selectoption({index:1}); //index
+await page.selectoption("#country","India"); //by text
