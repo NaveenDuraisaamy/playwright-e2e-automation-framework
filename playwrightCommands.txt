@@ -2,7 +2,7 @@ Run Command
 ------
 npx playwright test tests/login.spec.js
 npx playwright test tests/locators.spec.js --project=chromium
-npx playwright test tests/locators.spec.js --project=chromium --headed
+npx playwright test tests/Hooks.spec.js --project=chromium --headed
 npx playwright test tests/login.spec.js --project=chromium --headed --debug
 npx playwright show-report
 npx playwright show-report --port=9292
@@ -37,3 +37,23 @@ await page.locator("country").selectoption('India'); //text
 await page.locator("").selectoption({value:'uk'}); //value
 await page.locator("").selectoption({index:1}); //index
 await page.selectoption("#country","India"); //by text
+
+Playwright Hooks
+----------------
+beforeEach: This hook is executed beforeEach individual test.
+afterEach: This hook is executed afterEach individual test.
+
+beforeAll: This hook is executed one before any of the tests start running.
+afterAll: This hook is executed once afetr all the tests have been run.
+
+Group test
+----------
+test.describe{
+    test()
+    test()
+}
+test.describe{
+    test()
+    test()
+}
+

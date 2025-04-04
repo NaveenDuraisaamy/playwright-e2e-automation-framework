@@ -10,6 +10,7 @@ test("Fie Upload", async ({ page }) => {
 
   await page.waitForTimeout(5000);
 
+});
   test("MultiFile",async({page})=>{
 
     await page.goto("https://davidwalsh.name/demo/multiple-file-upload.php");
@@ -17,5 +18,4 @@ test("Fie Upload", async ({ page }) => {
     await page.locator("#filesToUpload").setInputFiles(["tests/FileUpload/second.jpg","tests/FileUpload/second.jpg"]);
 
     await page.waitForTimeout(5000);
-  })
 });
