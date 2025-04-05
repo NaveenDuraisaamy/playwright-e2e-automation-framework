@@ -57,3 +57,6 @@ test.describe{
     test()
 }
 
+Trace
+-----
+npx playwright show-trace test-results\Trace-Frame-chromium\trace.zip
