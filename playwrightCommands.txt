@@ -60,3 +60,17 @@ test.describe{
 Trace
 -----
 npx playwright show-trace test-results\Trace-Frame-chromium\trace.zip
+
+Tag
+---
+
+Syntax
+
+test("Tag4", { tag: ['@fast', '@slow'] }, async ({ page }) => {
+  console.log("Hi this is Sai");
+});
+
+Single run- npx playwright test tests/Tags.spec.js --project chromium --grep "@fast"
+AND-        npx playwright test tests/Tags.spec.js --project chromium --grep "(?=.*@fast)(?=.*@slow)"
+Exclude-    npx playwright test tests/Tags.spec.js --project=chromium --grep  "@fast" --grep-invert "@man"
+OR-         npx playwright test tests/Tags.spec.js --project=chromium --grep --% "@fast^|@man"
