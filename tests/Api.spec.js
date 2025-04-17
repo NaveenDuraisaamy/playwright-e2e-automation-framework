@@ -1,4 +1,5 @@
 import{test,expect} from '@playwright/test';
+import { request } from 'http';
 
 //Get
 test("Get API",async({ request })=>{
@@ -33,9 +34,16 @@ test("PUT API", async ({ request }) => {
       job: "leader",
     },
   });
-  console.log("POST", await postRequest.json());
-  await expect(postRequest.status()).toBe(201);
+  console.log("POST", await postRequests.json());
+  await expect(postRequests.status()).toBe(201);
 
-  var req = await postRequest.json();
-  console.log(req.id);
+  var reqs = await postRequests.json();
+  console.log(reqs.id);
 });
+
+//Delete
+test("Delete",async({request})=>{
+
+  const deleteOption=await request.delete("https://reqres.in/api/users/2");
+  expect(deleteOption.status()).toBe(204);
+})
