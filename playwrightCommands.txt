@@ -70,7 +70,35 @@ test("Tag4", { tag: ['@fast', '@slow'] }, async ({ page }) => {
   console.log("Hi this is Sai");
 });
 
+File Run:
+
 Single run- npx playwright test tests/Tags.spec.js --project chromium --grep "@fast"
 AND-        npx playwright test tests/Tags.spec.js --project chromium --grep "(?=.*@fast)(?=.*@slow)"
 Exclude-    npx playwright test tests/Tags.spec.js --project=chromium --grep  "@fast" --grep-invert "@man"
 OR-         npx playwright test tests/Tags.spec.js --project=chromium --grep --% "@fast^|@man"
+
+
+Reports:
+List- npx playwright test --reporter=list
+npx playwright test --reporter=line
+npx playwright test --reporter=dot
+npx playwright test --reporter=html
+PLAYWRIGHT_JSON_OUTPUT_NAME=results.json npx playwright test --reporter=json 
+PLAYWRIGHT_JUNIT_OUTPUT_NAME=results.xml npx playwright test --reporter=junit
+
+Allure - Reports
+
+1. Installation
+npm install -D allure-playwright
+2. Command Line
+npm install -g allure-commandline --save-dev
+
+Generate Allure Reports
+
+allure generate my-allure-results -o allure-report --clean
+allure open allure-report
+
+Retry Logic:
+
+1. retries=1,
+2. npx playwright test tests/Reports.spec.js --project=chromium --headed --retries=1
